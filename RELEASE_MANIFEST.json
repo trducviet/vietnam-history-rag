@@ -1,9 +1,9 @@
 {
   "package": "vietnam-history-chatbot-final",
-  "generated_at": "2026-06-01T17:05:00.2282087+07:00",
+  "generated_at": "2026-06-01T17:14:50.7072696+07:00",
   "file_count_excluding_manifest": 126,
-  "total_bytes_excluding_manifest": 23442787.0,
-  "notes": "Final GitHub package: runtime, clean release names, service-only web fallback, minimal final data, final reports, no real env/API key.",
+  "total_bytes_excluding_manifest": 23443611,
+  "notes": "Final GitHub package: runtime, clean release names, service-only web fallback, minimal final data, final reports, no real env/API key. Date guard fixed for historical slash dates.",
   "files": [
     {
       "path": ".gitignore",
@@ -152,8 +152,8 @@
     },
     {
       "path": "scripts/web-demo/persistent-rag-runtime-service.py",
-      "bytes": 416939,
-      "sha256": "0740395ec38b9d6ded3fca633b5a65672f8f34e142a8d22f537ffafbc9ff9aa2"
+      "bytes": 417763,
+      "sha256": "7dc2cf4678b629d7e9c21b275f67d83b92926b490d9c3bc3f9cf9770368e3f74"
     },
     {
       "path": "smoke_test.ps1",

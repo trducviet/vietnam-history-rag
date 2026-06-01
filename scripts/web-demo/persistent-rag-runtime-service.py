@@ -245,6 +245,14 @@ def now_ms() -> float:
     return time.perf_counter() * 1000
 
 
+def normalize_user_message(text: Any) -> str:
+    value = str(text or "").strip()
+    # Normalize historical slash dates before guard checks, e.g. "30/4/ 1975".
+    value = re.sub(r"\b(\d{1,2})\s*([/-])\s*(\d{1,2})\s*\2\s*(19[3-7]\d)\b", r"\1\2\3\2\4", value)
+    value = re.sub(r"\b(\d{1,2})\s*([/-])\s*(19[3-7]\d)\b", r"\1\2\3", value)
+    return re.sub(r"\s+", " ", value).strip()
+
+
 def read_jsonl(path: Path) -> list[dict[str, Any]]:
     if not path.exists():
         return []
@@ -1409,10 +1417,11 @@ class RuntimeService:
 
     def early_guard(self, message: str, mode: str) -> dict[str, Any] | None:
         started = now_ms()
-        folded_message = message.lower()
+        normalized_message = normalize_user_message(message)
+        folded_message = normalized_message.lower()
         fold_fn = self.stage20g2_runtime_module.fold if self.stage20g2_runtime_module is not None else None
         if callable(fold_fn):
-            folded_message = fold_fn(message)
+            folded_message = fold_fn(normalized_message)
         compact_message = re.sub(r"\s+", " ", folded_message).strip()
         tokens = re.findall(r"[a-z0-9]+", compact_message)
         has_digit = any(re.search(r"\d", token) for token in tokens)
@@ -1429,7 +1438,7 @@ class RuntimeService:
         question_signals = [
             "la gi", "nam nao", "ngay nao", "khi nao", "o dau", "tai sao", "vi sao",
             "nhu the nao", "y nghia", "vai tro", "so sanh", "khac nhau", "dien ra",
-            "xay ra", "bat dau", "ket thuc", "moc", "timeline",
+            "xay ra", "bat dau", "ket thuc", "moc", "su kien", "timeline",
         ]
         has_history_signal = any(signal in compact_message for signal in history_signals)
         has_question_signal = any(signal in compact_message for signal in question_signals)
@@ -1447,7 +1456,7 @@ class RuntimeService:
             r"\bcong\s+thuc\s+tinh\b",
             r"\bdao\s+ham\b",
             r"\btich\s+phan\b",
-            r"\b\d+\s*(cong|tru|nhan|chia|\+|-|\*|/)\s*\d+\b",
+            r"\b\d+\s*(cong|tru|nhan|chia|\+|-|\*)\s*\d+\b",
             r"\bdich\s+vu\s+giao\s+hang\b",
             r"\bre\s+nhat\s+hien\s+nay\b",
             r"\bkhong\s+phai\s+cau\s+hoi\s+lich\s+su\b",
@@ -1569,13 +1578,13 @@ class RuntimeService:
                 "nên hệ thống không trả lời ngoài phạm vi đã kiểm chứng."
             )
             return self.guard_response(message, mode, answer, "safe_out_of_scope", started, "oos_outside_1930_1975")
-        if OOS_RE.search(message or "") or OOS_RE.search(folded_message or ""):
+        if OOS_RE.search(normalized_message or "") or OOS_RE.search(folded_message or ""):
             answer = (
                 "Câu hỏi này chưa có nguồn phù hợp trong tư liệu nội bộ, "
                 "nên hệ thống không trả lời ngoài phạm vi đã kiểm chứng."
             )
             return self.guard_response(message, mode, answer, "safe_out_of_scope", started, "oos_current_world")
-        match = DATE_RE.search(message or "")
+        match = DATE_RE.search(normalized_message or "")
         if match:
             day, month, year = (int(x) for x in match.groups())
             if not valid_date(day, month, year):
@@ -5431,7 +5440,9 @@ class RuntimeService:
 
     def local_chat(self, payload: dict[str, Any]) -> tuple[int, dict[str, Any]]:
         started = now_ms()
-        message = str(payload.get("message") or payload.get("question") or "").strip()
+        raw_message = str(payload.get("message") or payload.get("question") or "").strip()
+        message = normalize_user_message(raw_message)
+        payload = {**payload, "message": message, "question": message, "original_message": raw_message}
         data_profile = self.requested_data_profile(payload)
         guard = self.early_guard(message, "local_no_cloud")
         if guard:
@@ -6147,7 +6158,9 @@ class RuntimeService:
 
     def cloud_chat(self, payload: dict[str, Any]) -> tuple[int, dict[str, Any]]:
         started = now_ms()
-        message = str(payload.get("message") or payload.get("question") or "").strip()
+        raw_message = str(payload.get("message") or payload.get("question") or "").strip()
+        message = normalize_user_message(raw_message)
+        payload = {**payload, "message": message, "question": message, "original_message": raw_message}
         data_profile = self.requested_data_profile(payload)
         force_cloud_llm_final = bool(payload.get("force_cloud_llm_final") is True or str(payload.get("force_cloud_llm_final") or "").lower() in {"1", "true", "yes"})
         guard = self.early_guard(message, "api_9router_fast")
