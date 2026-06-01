@@ -1,9 +1,9 @@
 {
   "package": "vietnam-history-chatbot-final",
-  "generated_at": "2026-06-01T16:39:37.8040572+07:00",
+  "generated_at": "2026-06-01T17:05:00.2282087+07:00",
   "file_count_excluding_manifest": 126,
-  "total_bytes_excluding_manifest": 23441873.0,
-  "notes": "Final GitHub package: runtime, clean release names, minimal final data, final reports, no real env/API key, excludes intermediate cache/log artifacts.",
+  "total_bytes_excluding_manifest": 23442787.0,
+  "notes": "Final GitHub package: runtime, clean release names, service-only web fallback, minimal final data, final reports, no real env/API key.",
   "files": [
     {
       "path": ".gitignore",
@@ -172,8 +172,8 @@
     },
     {
       "path": "vietnam-history-chatbot/.env.example",
-      "bytes": 698,
-      "sha256": "66cd8614ef9044c6ff19eee5c1bab4e631646fb91343c1896ac368d40844cc92"
+      "bytes": 695,
+      "sha256": "6d183c0906a2413e08c2aa56f2e5ea27c2e2513525d5f6c17f4fc5279b1d49ea"
     },
     {
       "path": "vietnam-history-chatbot/data_packs/canonical_1930_1975/canonical_evidence_bundle_summary.json",
@@ -317,8 +317,8 @@
     },
     {
       "path": "vietnam-history-chatbot/src/api/server.ts",
-      "bytes": 49795,
-      "sha256": "e8e4239a7ba0f96b86bb9eeea7fc8156365c457746578cfd0c1ebed3eab8e465"
+      "bytes": 50712,
+      "sha256": "7336faa5401883dac9a2aa649ee1f2813b51e6fe3d77f1820678dfb8c778326f"
     },
     {
       "path": "vietnam-history-chatbot/src/chat/answer-planner.ts",

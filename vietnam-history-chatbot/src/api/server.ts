@@ -22,6 +22,7 @@ import { BM25Index, BaselineTokenizer } from '../retrieval/bm25-index.js';
 import { InMemoryVectorStore } from '../shared/vector-store.js';
 import { processChat, type ChatPipelineConfig } from '../chat/pipeline.js';
 import type { SessionMemoryState } from '../chat/session-memory.js';
+import type { LoadedDataset } from '../shared/types.js';
 
 process.env.NO_CLOUD ??= '1';
 process.env.DISABLE_CLOUD_LLM ??= '1';
@@ -427,6 +428,30 @@ function postcheckApiAnswer(answer: string, citations: any[], answerable: boolea
   return issues;
 }
 
+function createEmptyDataset(): LoadedDataset {
+  return {
+    events: new Map(),
+    synthesis: new Map(),
+    disambiguationRules: new Map(),
+    canonicalEvents: [],
+    canonicalSynthesis: [],
+    canonicalDisambiguationRules: [],
+    allCanonicalDocs: [],
+    eventEntityLinks: [],
+    synthesisEventLinks: [],
+    qaBenchmark: [],
+    retrievalQueries: [],
+    hardNegatives: [],
+    sources: new Map(),
+    runtimeLinks: [],
+    linksByFromDocId: new Map(),
+    linksByToSourceId: new Map(),
+    entityToEvents: new Map(),
+    synthesisToEvents: new Map(),
+    eventToSynthesis: new Map(),
+  };
+}
+
 
 async function main() {
   console.log('═══════════════════════════════════════════════════');
@@ -437,7 +462,14 @@ async function main() {
 
   // Initialize dataset and indexes
   console.log('📦 Initializing...\n');
-  const dataset = loadDataset();
+  let dataset: LoadedDataset;
+  try {
+    dataset = loadDataset();
+  } catch (error) {
+    console.warn('⚠️  Legacy dataset pack not found. Starting Express in persistent-service-only mode.');
+    console.warn(`   ${(error as Error).message}`);
+    dataset = createEmptyDataset();
+  }
 
   // Build SEPARATE BM25 indexes for Event and Synthesis lanes
   const eventBM25 = new BM25Index(new BaselineTokenizer());
