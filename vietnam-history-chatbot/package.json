@@ -1,0 +1,31 @@
+{
+  "name": "vietnam-history-chatbot",
+  "version": "0.1.0",
+  "description": "Vietnamese Historical RAG Chatbot (1858-2000)",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/api/server.ts",
+    "rag:service": "python ../scripts/web-demo/persistent-rag-runtime-service.py",
+    "demo:warmup": "node scripts/warmup-rag-service.mjs",
+    "demo:health": "node scripts/check-rag-service-health.mjs",
+    "ingest": "tsx scripts/ingest.ts",
+    "eval:retrieval": "tsx scripts/run-retrieval-eval.ts",
+    "eval:qa": "tsx scripts/run-qa-benchmark.ts",
+    "eval:hard-neg": "tsx scripts/run-hard-negative-check.ts",
+    "build": "tsc",
+    "start": "node dist/src/api/server.js"
+  },
+  "dependencies": {
+    "openai": "^4.73.0",
+    "express": "^4.21.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0",
+    "tsx": "^4.19.0",
+    "@types/node": "^22.0.0",
+    "@types/express": "^5.0.0",
+    "@types/cors": "^2.8.17"
+  }
+}

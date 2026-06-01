@@ -1,0 +1,215 @@
+{
+  "version": "1.0",
+  "patch": "PUBLIC_WEB_DEMO_SHELL",
+  "description": "Demo questions for local controlled web demo and future public/free-form upgrade",
+  "groups": [
+    {
+      "id": "official_hybrid",
+      "label": "Câu hỏi Hybrid chính thức",
+      "description": "Câu hỏi đã được kiểm chứng với hybrid BM25+Vector retrieval (LOCAL_DEMO-R)"
+    },
+    {
+      "id": "fallback",
+      "label": "BM25 Fallback",
+      "description": "Câu hỏi trong phạm vi dữ liệu nhưng chưa có query embedding cache"
+    },
+    {
+      "id": "safety",
+      "label": "An toàn / Ranh giới",
+      "description": "Hành vi làm rõ và ngoài phạm vi"
+    },
+    {
+      "id": "gate_only",
+      "label": "Thử nghiệm (gate-only)",
+      "description": "Không dùng trong demo chính thức — cần nâng cấp thêm"
+    }
+  ],
+  "questions": [
+    {
+      "id": "demo_asean",
+      "label": "ASEAN 1995",
+      "question": "Việt Nam bước vào hội nhập khu vực Đông Nam Á khi nào?",
+      "group": "official_hybrid",
+      "mode": "hybrid_cached",
+      "query_cache_key": "para_asean",
+      "expected_targets": ["EVT_0416"],
+      "expected_terms": ["ASEAN", "1995"],
+      "official_demo": true,
+      "gate_only": false,
+      "public_freeform_ready": false
+    },
+    {
+      "id": "demo_hoa_ky",
+      "label": "Bình thường hóa Hoa Kỳ 1995",
+      "question": "Sự kiện nào đánh dấu Việt Nam nối lại quan hệ chính thức với Hoa Kỳ?",
+      "group": "official_hybrid",
+      "mode": "hybrid_cached",
+      "query_cache_key": "cap9i_092",
+      "expected_targets": ["EVT_0417"],
+      "expected_terms": ["Hoa Kỳ", "Mỹ", "1995", "bình thường hóa"],
+      "official_demo": true,
+      "gate_only": false,
+      "public_freeform_ready": false
+    },
+    {
+      "id": "demo_17",
+      "label": "Genève / Vĩ tuyến 17",
+      "question": "Văn kiện nào tạm thời chia Việt Nam ở vĩ tuyến 17?",
+      "group": "official_hybrid",
+      "mode": "hybrid_cached",
+      "query_cache_key": "para_17",
+      "expected_targets": ["EVT_0211"],
+      "expected_terms": ["Genève", "vĩ tuyến 17", "1954"],
+      "official_demo": true,
+      "gate_only": false,
+      "public_freeform_ready": false
+    },
+    {
+      "id": "demo_dongdu",
+      "label": "Phong trào Đông Du",
+      "question": "Phong trào đưa thanh niên sang Nhật học đầu thế kỷ XX là gì?",
+      "group": "official_hybrid",
+      "mode": "hybrid_cached",
+      "query_cache_key": "para_dongdu",
+      "expected_targets": ["EVT_0077"],
+      "expected_terms": ["Đông Du"],
+      "official_demo": true,
+      "gate_only": false,
+      "public_freeform_ready": false
+    },
+    {
+      "id": "demo_saigon",
+      "label": "Giải phóng Sài Gòn 1975",
+      "question": "Sự kiện nào kết thúc chính quyền Sài Gòn năm 1975?",
+      "group": "official_hybrid",
+      "mode": "hybrid_cached",
+      "query_cache_key": "para_saigon",
+      "expected_targets": ["EVT_0354", "EVT_0357"],
+      "expected_terms": ["1975", "Sài Gòn", "đầu hàng", "Dinh Độc Lập"],
+      "official_demo": true,
+      "gate_only": false,
+      "public_freeform_ready": false
+    },
+    {
+      "id": "demo_paris",
+      "label": "Hiệp định Paris 1973",
+      "question": "Hiệp định nào gắn với việc Mỹ rút quân khỏi Việt Nam?",
+      "group": "official_hybrid",
+      "mode": "hybrid_cached",
+      "query_cache_key": "para_paris",
+      "expected_targets": ["EVT_0337"],
+      "expected_terms": ["Paris", "1973"],
+      "official_demo": true,
+      "gate_only": false,
+      "public_freeform_ready": false
+    },
+    {
+      "id": "demo_phap",
+      "label": "Pháp xâm lược 1858",
+      "question": "Sự kiện nào mở đầu cuộc xâm lược Việt Nam của Pháp?",
+      "group": "official_hybrid",
+      "mode": "hybrid_cached",
+      "query_cache_key": "para_phap",
+      "expected_targets": ["EVT_0001"],
+      "expected_terms": ["Pháp", "1858", "Đà Nẵng"],
+      "official_demo": true,
+      "gate_only": false,
+      "public_freeform_ready": false
+    },
+    {
+      "id": "demo_vietminh",
+      "label": "Việt Minh 1941",
+      "question": "Tổ chức nào do Nguyễn Ái Quốc thành lập ở Pắc Bó năm 1941?",
+      "group": "official_hybrid",
+      "mode": "hybrid_cached",
+      "query_cache_key": "para_vietminh",
+      "expected_targets": ["EVT_0120"],
+      "expected_terms": ["Việt Minh", "1941", "Pắc Bó"],
+      "official_demo": true,
+      "gate_only": false,
+      "public_freeform_ready": false
+    },
+    {
+      "id": "demo_cmtt",
+      "label": "Cách mạng Tháng Tám 1945",
+      "question": "Nhân dân Việt Nam giành chính quyền vào mùa thu năm nào?",
+      "group": "official_hybrid",
+      "mode": "hybrid_cached",
+      "query_cache_key": "para_cmtt",
+      "expected_targets": ["EVT_0127", "EVT_0123"],
+      "expected_terms": ["1945", "Cách mạng Tháng Tám", "Tổng khởi nghĩa", "giành chính quyền"],
+      "official_demo": true,
+      "gate_only": false,
+      "public_freeform_ready": false
+    },
+    {
+      "id": "demo_canvuong",
+      "label": "Phong trào Cần Vương",
+      "question": "Phong trào Cần Vương diễn ra trong bối cảnh nào?",
+      "group": "fallback",
+      "mode": "bm25_fallback",
+      "query_cache_key": null,
+      "expected_targets": [],
+      "expected_terms": ["Cần Vương"],
+      "official_demo": true,
+      "gate_only": false,
+      "public_freeform_ready": false
+    },
+    {
+      "id": "demo_clarification",
+      "label": "Cần làm rõ",
+      "question": "Nó diễn ra khi nào?",
+      "group": "safety",
+      "mode": "policy_guard",
+      "query_cache_key": null,
+      "expected_targets": [],
+      "expected_terms": [],
+      "expected_policy": "CLARIFY",
+      "official_demo": true,
+      "gate_only": false,
+      "public_freeform_ready": false
+    },
+    {
+      "id": "demo_oos",
+      "label": "Ngoài phạm vi",
+      "question": "Trận Waterloo có ý nghĩa gì?",
+      "group": "safety",
+      "mode": "policy_guard",
+      "query_cache_key": null,
+      "expected_targets": [],
+      "expected_terms": [],
+      "expected_policy": "REFUSE_OOS",
+      "official_demo": true,
+      "gate_only": false,
+      "public_freeform_ready": false
+    },
+    {
+      "id": "demo_dbp",
+      "label": "Điện Biên Phủ (thử nghiệm)",
+      "question": "Trận đánh lớn nhất kết thúc cuộc kháng chiến chống Pháp?",
+      "group": "gate_only",
+      "mode": "gate_only",
+      "query_cache_key": "para_dbp",
+      "expected_targets": ["EVT_0209", "EVT_0195"],
+      "expected_terms": ["Điện Biên Phủ"],
+      "official_demo": false,
+      "gate_only": true,
+      "public_freeform_ready": false,
+      "future_patch_needed": "Hybrid rank 8; BM25 retrieves wrong event. Needs retrieval tuning."
+    },
+    {
+      "id": "demo_comparison",
+      "label": "So sánh (thử nghiệm)",
+      "question": "Hãy so sánh Chiến tranh đặc biệt và Chiến tranh cục bộ",
+      "group": "gate_only",
+      "mode": "gate_only",
+      "query_cache_key": null,
+      "expected_targets": [],
+      "expected_terms": [],
+      "official_demo": false,
+      "gate_only": true,
+      "public_freeform_ready": false,
+      "future_patch_needed": "PATCH 10D — side-specific retrieval for comparison queries"
+    }
+  ]
+}

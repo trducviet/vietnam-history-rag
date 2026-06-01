@@ -1,0 +1,36 @@
+# Runtime secrets
+.env
+*.env.local
+
+# Node/Python build artifacts
+node_modules/
+dist/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Logs and temporary files
+*.log
+*.err.log
+*.out.log
+logs/
+tmp/
+temp/
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Large/generated local caches not needed for this release
+data_packs/**/runtime_logs/
+data_packs/**/raw_capture/
+data_packs/**/outputs/
+data_packs/**/scores/
+data_packs/**/traces/
+data_packs/**/secrets_audit/
+
+# Do not commit intermediate evaluation folders
+data_packs/*_intermediate*/

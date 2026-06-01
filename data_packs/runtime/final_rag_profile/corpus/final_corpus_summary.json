@@ -1,0 +1,31 @@
+{
+  "stage": "FINAL_RAG_PROFILE",
+  "profile": "final_local_retrieval",
+  "generated_at": "2026-05-26T18:47:36.066199+00:00",
+  "upstream_profile": "promoted_style_profile",
+  "upstream_records": 1016,
+  "supplemental_records_added": 33,
+  "candidate_records": 1049,
+  "candidate_corpus": "data_packs\\runtime\\final_rag_profile\\corpus\\final_corpus.jsonl",
+  "candidate_index": "data_packs\\runtime\\final_rag_profile\\index\\local_faiss.index",
+  "candidate_metadata": "data_packs\\runtime\\final_rag_profile\\cache\\local_embedding_metadata.jsonl",
+  "index_summary": {
+    "faiss_index_path": "data_packs\\runtime\\final_rag_profile\\index\\local_faiss.index",
+    "embedding_path": "data_packs\\runtime\\final_rag_profile\\cache\\local_embeddings.float32.npy",
+    "metadata_path": "data_packs\\runtime\\final_rag_profile\\cache\\local_embedding_metadata.jsonl",
+    "model": "intfloat/multilingual-e5-base",
+    "provider": "local_sentence_transformer",
+    "cloud_embedding_calls": 0,
+    "vector_count": 1049,
+    "dimension": 768,
+    "index_type": "IndexFlatIP",
+    "normalize": true,
+    "elapsed_ms": 580330.1,
+    "status": "PASS"
+  },
+  "default_runtime_changed": false,
+  "active_corpus_mutation": false,
+  "upstream_mutation": false,
+  "status": "PASS"
+}
+

@@ -1,0 +1,639 @@
+{
+  "package": "vietnam-history-chatbot-final",
+  "generated_at": "2026-06-01T16:39:37.8040572+07:00",
+  "file_count_excluding_manifest": 126,
+  "total_bytes_excluding_manifest": 23441873.0,
+  "notes": "Final GitHub package: runtime, clean release names, minimal final data, final reports, no real env/API key, excludes intermediate cache/log artifacts.",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 551,
+      "sha256": "1d0b6965ccb869828befb5c9d072dfb4a5ff913feef02ea5445515eb78681eda"
+    },
+    {
+      "path": "data_packs/runtime/final_rag_profile/cache/local_embedding_metadata.jsonl",
+      "bytes": 462991,
+      "sha256": "72c24b5e3b9476d81ba2bbfbd4f2453edda7635eea6f7760f61765fa2826cf16"
+    },
+    {
+      "path": "data_packs/runtime/final_rag_profile/corpus/final_corpus_summary.json",
+      "bytes": 1305,
+      "sha256": "dc343b64254f7b1f9653d36f7b60d03de989d22b7e6b4ab2e75d1c6d9aa0da1f"
+    },
+    {
+      "path": "data_packs/runtime/final_rag_profile/corpus/final_corpus.jsonl",
+      "bytes": 4893823,
+      "sha256": "40df37d9ef741816a0ee90a1878cfd8c7d3da5e01e2d9329f502c637cf0beaa2"
+    },
+    {
+      "path": "data_packs/runtime/final_rag_profile/index/final_faiss_index_summary.json",
+      "bytes": 568,
+      "sha256": "d5f1db2bea6470e814f9ea72cd5e3671889471f8b6f5077c99bdbcfc3caeb441"
+    },
+    {
+      "path": "data_packs/runtime/final_rag_profile/index/local_faiss.index",
+      "bytes": 3222573,
+      "sha256": "9a9fe22ad5a95fc75cf0b44bcf8cd211990c3f5c64734149d5ada18ee26fcc41"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3177,
+      "sha256": "2510d6bccf5a58fee86527ca44031a635275cbeb5102352631b45baab43d0613"
+    },
+    {
+      "path": "reports/answer_quality_500/answer_generation_trace.jsonl",
+      "bytes": 2985738,
+      "sha256": "e36218391b5c684ae7a8fe7ff37c58c0fc1a54a4b439896156be011f5dd31f03"
+    },
+    {
+      "path": "reports/answer_quality_500/answer_quality_audit_report.md",
+      "bytes": 12685,
+      "sha256": "df057389064e79e02612c966634df91308fd0aa186a3c224cf6b7b04146aee31"
+    },
+    {
+      "path": "reports/answer_quality_500/answer_quality_scored.csv",
+      "bytes": 687663,
+      "sha256": "8df32c76ccdc0e5d9c5123f2ca5a7238477bf3305d2543dc29aae34cb2657d59"
+    },
+    {
+      "path": "reports/answer_quality_500/answer_quality_summary.json",
+      "bytes": 3249,
+      "sha256": "f6efd9699bedfcde2cded69cc1a5f65fea98070959697a22933f2fc0b15387ec"
+    },
+    {
+      "path": "reports/answer_quality_500/testset_500.csv",
+      "bytes": 389295,
+      "sha256": "232bcdeec69780233fab7f7469cbbeb5a997b052614efd1cc2f1ff75130d20bf"
+    },
+    {
+      "path": "reports/answer_quality_500/testset_500.jsonl",
+      "bytes": 555782,
+      "sha256": "2ddf4d6cdc0a78604c5777d550e70f5c41b563a9c356a1c2ba7dbff4c05c055d"
+    },
+    {
+      "path": "reports/answer_quality_500/testset_hash.txt",
+      "bytes": 85,
+      "sha256": "decaa94b8786fcfc484045036f9da0765a34da213e29678eaa86f4946f34925d"
+    },
+    {
+      "path": "reports/final_project_report/final_category_metrics.csv",
+      "bytes": 463,
+      "sha256": "5d656811c242cb7b1697a070d0ecc004084994746d70e6967813c11db1b97bf9"
+    },
+    {
+      "path": "reports/final_project_report/final_metrics_summary.json",
+      "bytes": 36877,
+      "sha256": "a649c03c85ab2be418d3176176562f35462654807e136b477bee5f919c3b32b3"
+    },
+    {
+      "path": "reports/final_project_report/final_project_report.md",
+      "bytes": 9946,
+      "sha256": "ee68c62b2b8afcba61593d055aa5ad5e6746cc0c96178a4e993553cee1fa8e82"
+    },
+    {
+      "path": "reports/retrieval_300/retrieval_benchmark_300_detail.csv",
+      "bytes": 256182,
+      "sha256": "300771b1c5ff7c7f8e0930415031aef3bf09db4a8ccb2f010613c96c7f605cbc"
+    },
+    {
+      "path": "reports/retrieval_300/retrieval_benchmark_300_failures.md",
+      "bytes": 15391,
+      "sha256": "2b27bef24410044c98c2223e5c97ae8ffbfbf7165b59a9785b34f2b75e347916"
+    },
+    {
+      "path": "reports/retrieval_300/retrieval_benchmark_300_summary.json",
+      "bytes": 25164,
+      "sha256": "92581d5878a02981985a23368f96cc85434f29ba080cfe3c19f0dfa93b3b02e8"
+    },
+    {
+      "path": "reports/retrieval_300/retrieval_benchmark_300_trace.jsonl",
+      "bytes": 2363816,
+      "sha256": "4130e243543a6f5af61f930720c8c7687f871a49415bdd8554f345edc1456828"
+    },
+    {
+      "path": "reports/thesis_docx/Bao_cao_do_an_chatbot_lich_su_viet_nam.docx",
+      "bytes": 2695425,
+      "sha256": "f21613e77cfeae60ada75e7a03c6ed620a9f1a4a06db23fdf2af92e5abcc6f79"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 94,
+      "sha256": "78532d60652cda16be4447926774b32902a399831c2a2261b5ea4f6d0b502b4f"
+    },
+    {
+      "path": "scripts/data-pack/build_canonical_corpus.py",
+      "bytes": 81047,
+      "sha256": "c0c1565957cabcb96a96fc16e1bd939d033ae8b6437cee0cd11d30beded3dc98"
+    },
+    {
+      "path": "scripts/data-pack/build_final_rag_profile.py",
+      "bytes": 105485,
+      "sha256": "065176340aeb019ca9f45b78afadd2ae1575c00cf363faefdd36eb1b776a5677"
+    },
+    {
+      "path": "scripts/data-pack/polish_public_evidence_answers.py",
+      "bytes": 21374,
+      "sha256": "94e555db5a68085f1edc863033728bcd61bcef121e206e40adbfa1451bb3a01f"
+    },
+    {
+      "path": "scripts/data-pack/promote_human_review_style.py",
+      "bytes": 22615,
+      "sha256": "faa2d601bc3c71ec42b9ad71efdfaf7430570534c3cb679ac21cdaf6f9856a8e"
+    },
+    {
+      "path": "scripts/web-demo/9router-cloud-retrieval-cli.py",
+      "bytes": 18033,
+      "sha256": "4399643b8985f1cd56c8c7b7706b8803fd0be0bef3e93f540ff349c813ee5c7d"
+    },
+    {
+      "path": "scripts/web-demo/local-hybrid-chat-cli.py",
+      "bytes": 47499,
+      "sha256": "741e69313a55455149b9c45627f177fa136d305f06c1f217317aaffabc8bc2c9"
+    },
+    {
+      "path": "scripts/web-demo/persistent-rag-runtime-service.py",
+      "bytes": 416939,
+      "sha256": "0740395ec38b9d6ded3fca633b5a65672f8f34e142a8d22f537ffafbc9ff9aa2"
+    },
+    {
+      "path": "smoke_test.ps1",
+      "bytes": 657,
+      "sha256": "e64085c6718ec2c6bae6cc8c87a2d128edf13004c03c7a1facd01b3a9cb830da"
+    },
+    {
+      "path": "start_runtime.ps1",
+      "bytes": 572,
+      "sha256": "63fd4181042d81b98811f55a40e03d65c2dc0db650b0e3b787bfb2ff49dc6de1"
+    },
+    {
+      "path": "start_web.ps1",
+      "bytes": 157,
+      "sha256": "7c7f3092e9779940665fa5ad5aedddcd765a11bfdc5b0c468666b13367a8ad6a"
+    },
+    {
+      "path": "vietnam-history-chatbot/.env.example",
+      "bytes": 698,
+      "sha256": "66cd8614ef9044c6ff19eee5c1bab4e631646fb91343c1896ac368d40844cc92"
+    },
+    {
+      "path": "vietnam-history-chatbot/data_packs/canonical_1930_1975/canonical_evidence_bundle_summary.json",
+      "bytes": 631,
+      "sha256": "9b740a471ec46674e2e44c686e2841232807311eff93e96e950e437247f06416"
+    },
+    {
+      "path": "vietnam-history-chatbot/data_packs/canonical_1930_1975/canonical_evidence_bundles_1930_1975.jsonl",
+      "bytes": 785668,
+      "sha256": "cbf3d5eb61bfad7956e0bd366c557af9d1c9b97ee14eae5240454d62de469532"
+    },
+    {
+      "path": "vietnam-history-chatbot/data_packs/canonical_1930_1975/canonical_facts_1930_1975.jsonl",
+      "bytes": 84274,
+      "sha256": "74e543d65d14c4d5e6a5781d3ec0979c7c74ebb50600d715cc33e571c5791b49"
+    },
+    {
+      "path": "vietnam-history-chatbot/demo/demo_query_map.json",
+      "bytes": 1763,
+      "sha256": "2b9f8e3d1a97eb363b88157831e612faa3de6dc9af4c18eaa0119a72dbd51ecf"
+    },
+    {
+      "path": "vietnam-history-chatbot/demo/demo_questions_local.json",
+      "bytes": 5542,
+      "sha256": "b25479e88b3014feb0f854d7e0af7f20d7f85b3df25d254946b91831fdaf3560"
+    },
+    {
+      "path": "vietnam-history-chatbot/demo/demo.env.example",
+      "bytes": 390,
+      "sha256": "1afd66456e4a707be3a45e09fd678db6609cdf8b941981ee8705fcfd1db49e33"
+    },
+    {
+      "path": "vietnam-history-chatbot/demo/public_demo_questions.json",
+      "bytes": 7507,
+      "sha256": "1199d792ad7eaf89c1f8294a81e3e46a43959cb1108d36b7b239f3aaada27772"
+    },
+    {
+      "path": "vietnam-history-chatbot/docs/EVALUATION.md",
+      "bytes": 2211,
+      "sha256": "cc4be640ce2a514aeb935e261fcf64b37be4d1ddb5d660fb5b327c1904022476"
+    },
+    {
+      "path": "vietnam-history-chatbot/docs/ROBUSTNESS_TESTING.md",
+      "bytes": 2597,
+      "sha256": "dfa90738d7f729baa899e66dc8aedbf82a4a4de95bf37e96f0a5bfdd088fcdc5"
+    },
+    {
+      "path": "vietnam-history-chatbot/package-lock.json",
+      "bytes": 62116,
+      "sha256": "3e3ccf0f696d7b6df0c7a48b90b481848626d74f7e0031cd28d1348105eab647"
+    },
+    {
+      "path": "vietnam-history-chatbot/package.json",
+      "bytes": 980,
+      "sha256": "bb3638fec51110776625669d46fa8be26a60385ddc60499a8dfccbf0d505ba42"
+    },
+    {
+      "path": "vietnam-history-chatbot/public/app.js",
+      "bytes": 29491,
+      "sha256": "d94d9bb14dfb7d49e31e1f105d993234f65172c2440631e92462a43df1ce2039"
+    },
+    {
+      "path": "vietnam-history-chatbot/public/assets/fonts/BE_VIETNAM_PRO_OFL.txt",
+      "bytes": 4397,
+      "sha256": "6b7f8f73609a25ea78c891e34cf37b06f8a676b7ea986e941e43b009110f2a85"
+    },
+    {
+      "path": "vietnam-history-chatbot/public/assets/fonts/be-vietnam-pro-400-latin.woff2",
+      "bytes": 21168,
+      "sha256": "03d1b589cff172e1a670b3573e731d3380bc326f80cf83b0d3504e3188e2e074"
+    },
+    {
+      "path": "vietnam-history-chatbot/public/assets/fonts/be-vietnam-pro-400-vietnamese.woff2",
+      "bytes": 11532,
+      "sha256": "dc085e2fba3414e5c5bf1e6172f921a9f81c5859946a4ed3d63c1e470d96a9e2"
+    },
+    {
+      "path": "vietnam-history-chatbot/public/assets/fonts/be-vietnam-pro-500-latin.woff2",
+      "bytes": 21892,
+      "sha256": "b621f77d35f777023aa11ca524462d511b4b28a813adbc0e9d15a10fc61dfe4e"
+    },
+    {
+      "path": "vietnam-history-chatbot/public/assets/fonts/be-vietnam-pro-500-vietnamese.woff2",
+      "bytes": 12172,
+      "sha256": "86341610cbe907eecf461c9159c168d5efb52bb1a33963813a08f520555d8e66"
+    },
+    {
+      "path": "vietnam-history-chatbot/public/assets/fonts/be-vietnam-pro-600-latin.woff2",
+      "bytes": 22032,
+      "sha256": "9503dec2a7c532c8331e9600bcafea287a4fd208573b8668d85ab8d8de1863c7"
+    },
+    {
+      "path": "vietnam-history-chatbot/public/assets/fonts/be-vietnam-pro-600-vietnamese.woff2",
+      "bytes": 12176,
+      "sha256": "97658c6f9a384f29a3005c3d96e2a0d1c810192cf68979071c290f5a377a9f99"
+    },
+    {
+      "path": "vietnam-history-chatbot/public/assets/fonts/be-vietnam-pro-700-latin.woff2",
+      "bytes": 22152,
+      "sha256": "a193dd87699bd2e18ddf72dc271493ea82a23dad9f5c334d9f2a257b1e05fc30"
+    },
+    {
+      "path": "vietnam-history-chatbot/public/assets/fonts/be-vietnam-pro-700-vietnamese.woff2",
+      "bytes": 12468,
+      "sha256": "4f58af2d1c3e28a9ba14c51c82db2751d78344b75bdcb34de24a1031ebe59da6"
+    },
+    {
+      "path": "vietnam-history-chatbot/public/assets/fonts/fonts.css",
+      "bytes": 3672,
+      "sha256": "e9e23ac5624a0c6a32797672f5ffe52e6d8ff402593c1739e8db423b30b0d68e"
+    },
+    {
+      "path": "vietnam-history-chatbot/public/assets/fonts/LITERATA_OFL.txt",
+      "bytes": 4389,
+      "sha256": "8742963604cd89dc81437811a850018fc03b2bfad686d7422c8235967c87614e"
+    },
+    {
+      "path": "vietnam-history-chatbot/public/assets/fonts/literata-600-700-latin.woff2",
+      "bytes": 85672,
+      "sha256": "7478e1920209e51dcc235d151d2056a0a6e3c54b4436f7030d256f231fe09b58"
+    },
+    {
+      "path": "vietnam-history-chatbot/public/assets/fonts/literata-600-700-vietnamese.woff2",
+      "bytes": 17792,
+      "sha256": "401a15e7e8161680a42a07e93b8a8169cd7a312b1511af89352ef135ef5eb30f"
+    },
+    {
+      "path": "vietnam-history-chatbot/public/assets/images/archive-reading-room.png",
+      "bytes": 1860452,
+      "sha256": "dd4e7ef694e039f064e2d3faef416f6c1388598ea1493792f7c1275b54e471dc"
+    },
+    {
+      "path": "vietnam-history-chatbot/public/index.html",
+      "bytes": 8684,
+      "sha256": "0e56a900a02069955febb4c9e918c3176c77745223387d0a7c04c53de6525c22"
+    },
+    {
+      "path": "vietnam-history-chatbot/public/styles.css",
+      "bytes": 19020,
+      "sha256": "bd270a5ecc82ad24967d9d1bd7aa13fbe5386b415559d7dfbd9e4147a04d9f42"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/api/server.ts",
+      "bytes": 49795,
+      "sha256": "e8e4239a7ba0f96b86bb9eeea7fc8156365c457746578cfd0c1ebed3eab8e465"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/chat/answer-planner.ts",
+      "bytes": 23759,
+      "sha256": "6bf8f4c110a37777d139387615c0e06c0a4c8ca34e2e117220932021a88f3521"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/chat/focus-checker.ts",
+      "bytes": 7312,
+      "sha256": "add2c0812bc20a5efa749f9c168c097481fb60a9015cc905b3618d0a882a4ccb"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/chat/followup-resolver.ts",
+      "bytes": 22041,
+      "sha256": "bf9f6623ee30e44a0acd002902608aef0dbbb701736b1513ed970aae7db059d9"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/chat/memory-policy.ts",
+      "bytes": 13535,
+      "sha256": "8745cb09b6196d90c94b48c0fb1f623fea3cb31111a9e837ce981e496fbf9859"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/chat/pipeline.ts",
+      "bytes": 56166,
+      "sha256": "a3d79efdb77ef9de778d3eaa77233053e7d18746c02b17cd572bac6f295ea057"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/chat/query-rewriter.ts",
+      "bytes": 10159,
+      "sha256": "a0b5d49f1b69a5d4087796138d430c0fcd2c604235f2c9327947ccb60a771b8a"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/chat/response-template.ts",
+      "bytes": 17137,
+      "sha256": "4d1ba6aa3e5cf49a0ae1a7ab0ca8ba48d5a7bec876958118adfa1d666d393a1c"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/chat/session-memory.ts",
+      "bytes": 32554,
+      "sha256": "9833187ec4ace4c3c7b7ad70b70a4da90aca18975997b25cb196e454c70be8b8"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/chat/template-renderer.ts",
+      "bytes": 19988,
+      "sha256": "059b220c8331249bc92cb5a42702d8ccd24be941393efbb5ab4b171cfceb444e"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/context/context-builder.ts",
+      "bytes": 52332,
+      "sha256": "634b330449f519d616888e69a346c3f7df708c6ea4901bc748f949591c69ee9f"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/evaluation/answer-quality-cases.ts",
+      "bytes": 9077,
+      "sha256": "b7abe726141a6fbac6f4b84b9af3822cd4bb98ded706beda3b34cea6c4a7efdb"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/evaluation/answer-quality-evaluator.ts",
+      "bytes": 12994,
+      "sha256": "226f0adeceed846ad0fdad61c891ae5c673746a7a3b9a7f5a7dede6cd63a2d89"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/evaluation/benchmark-runner.ts",
+      "bytes": 7118,
+      "sha256": "fea9a416f126d004e59751b2bd97603a45d341babc19beeaeabe126e41c2e68d"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/evaluation/llm-answer-judge.ts",
+      "bytes": 3546,
+      "sha256": "b0d683ca3cf53345db4721b4902d9de9697454d6320579b0080a6aecb6d607ad"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/evaluation/retrieval-evaluator.ts",
+      "bytes": 7960,
+      "sha256": "9d8102f7438a2bcde21b6b706e77db95b974bdb780fd36d7923b0757131ce960"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/evaluation/robustness-cases.ts",
+      "bytes": 23710,
+      "sha256": "dccf71bafec41f77bfccc50f8784d3845d601f0133a0fa8b242f7eafa8ff7224"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/evidence/evidence-selector.ts",
+      "bytes": 42814,
+      "sha256": "0cb67ebad8c66f3fd42edd586e86067dc57f558ed1e1cb63e5463a4de77d3604"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/evidence/focus-precision.ts",
+      "bytes": 33733,
+      "sha256": "c318619d766bb489527c67eac7865a272b2c06b4d62ec5c1f8aff5bd021de2a1"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/generation/answer-generator.ts",
+      "bytes": 25031,
+      "sha256": "a213a256348dd3bc30d2630740778b81e3a4760926c3c343a99bce8428a26deb"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/generation/answer-verifier.ts",
+      "bytes": 95123,
+      "sha256": "68509e296c946e9eb545bf99372c06e0c56b33f3e36236d9e8b8a6e91c8dba1a"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/generation/citation-enricher.ts",
+      "bytes": 5516,
+      "sha256": "ed169d8c13052078b829fc9cd7cd3f7da1f84540bbf319c3fc4808109b8a1e74"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/generation/confidence-scorer.ts",
+      "bytes": 7294,
+      "sha256": "4571b268e52ad74f21d8d9cb508558f08a99b0774602b4d88d7c81c590c2169a"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/indexing/semantic-feature-extractor.ts",
+      "bytes": 19607,
+      "sha256": "ea7bca5508dc4a00e61b65854bbdeceec319c579ec65221f26eb981a15bb2fc2"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/indexing/semantic-taxonomy.ts",
+      "bytes": 10878,
+      "sha256": "d12c37dc42405b376549ac2c4bb5c61fd79e785010375eca859d87ca087d6903"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/ingestion/data-loader.ts",
+      "bytes": 22196,
+      "sha256": "dd1b5bb139d2ce573818e71f0c13d018db3cfeeadac4625d466c1d281568f808"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/ingestion/embedding-generator.ts",
+      "bytes": 10636,
+      "sha256": "e024aca910380de7995018b0def7bd1b94a88b84c9eaf04431fac37c3b6b802e"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/ingestion/embedding-input-builder.ts",
+      "bytes": 2856,
+      "sha256": "3e943f36c582e0d4fbbcfff118fe09ecd7ce231e385140081f83002a872ee9d8"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/llm/external-api-guard.ts",
+      "bytes": 3199,
+      "sha256": "c6826ad4c7e1218f3bc1312956c088ef86fc106355b8814a20986119a0da9ca5"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/llm/llm-config.ts",
+      "bytes": 2759,
+      "sha256": "bf82bf486078a37830752e28c334cdd4ffb7ede087bd7ff5b431075a8cc5f29b"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/llm/llm-provider.ts",
+      "bytes": 678,
+      "sha256": "442793813c26a9b2cac02db695102a0687b98096c9c502681f5fff43551298c7"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/llm/llm-types.ts",
+      "bytes": 1861,
+      "sha256": "f710d5c7c6db3233a583d52e76c7c80e1d2f344a9e48785d38868bff9cf4e68d"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/llm/openai-chat-compat.ts",
+      "bytes": 5907,
+      "sha256": "51c4ee813bcaea0b0d120191dba40e37eb9982bddb0511228569430dbada2ef7"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/llm/providers/local-openai-compatible-provider.ts",
+      "bytes": 15283,
+      "sha256": "c7cb9abbca70f1e3e3f2ad684df80fa33d590a152c9c3e0b18f9a7d9a570986d"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/llm/providers/noop-provider.ts",
+      "bytes": 1445,
+      "sha256": "832544a135438ed155333f6400e32a8c092038fad3ddacc294b360bcfe469aa7"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/monitoring/query-monitor.ts",
+      "bytes": 5003,
+      "sha256": "d1a319986b3b985d99ee3c98ed3d33b0a7489015d9e10763d1961bd7df9fbc07"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/policy/answer-policy.ts",
+      "bytes": 4988,
+      "sha256": "f4495eb84083d1b44ce489096151099df81f79151218231c0330d93edd0f3969"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/policy/capability-classifier.ts",
+      "bytes": 20528,
+      "sha256": "94d0833ade7706082b149e7f4396f3c0feacbb7c31119eb55e3f4cc1326c1ec2"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/policy/capability-types.ts",
+      "bytes": 2580,
+      "sha256": "57ce5fe8a480bb6f8265fff104dd8d06f2bb9b0cf8929167258755088249fb9d"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/query-normalization/historical-entity-dictionary.ts",
+      "bytes": 13263,
+      "sha256": "dee21b272ef7a43f92243846fe618d05ffb7927c6ab4e2d0eaa1705c902ac246"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/query-normalization/query-normalization-types.ts",
+      "bytes": 2653,
+      "sha256": "f0d5f05d6cc8f01d6a1ae3da6e26a7745f30ee495526812e6533b98bfbe897fd"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/query-normalization/query-normalizer.ts",
+      "bytes": 16504,
+      "sha256": "8737fc5d3fb1217096358e818030aeeab9a4fc9dc0ac1ab23341e7826d0c0fdf"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/query-normalization/vietnamese-normalize.ts",
+      "bytes": 4902,
+      "sha256": "0275f32f8974c32940b09784ba9c1e7845fb795cefa2bda2500f6c0f4e36413d"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/reranking/hard-negative-guard.ts",
+      "bytes": 6307,
+      "sha256": "c8dcf834055762d4c2b3e70b71cd738a33b58da8651170c4aac207a299ce1561"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/reranking/reranker.ts",
+      "bytes": 4905,
+      "sha256": "8ebde3cf537a877c901873afbf13c2f1bd6686607e7051bb5d43fe8b232995bf"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/retrieval/bm25-index.ts",
+      "bytes": 6244,
+      "sha256": "7105c5378fca51dbdb53dceee4bf90cfd8c894ec4799964e7d419fb133806298"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/retrieval/hybrid-search.ts",
+      "bytes": 5585,
+      "sha256": "742752ae80aadd3dfcae80c31c93f4c18ea568d5c914548abbabf13a17363fdc"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/retrieval/query-embedding-cache.ts",
+      "bytes": 2509,
+      "sha256": "da532cb1f521758aa864d1f840774fd5edea053a6e7b0ec4b0bd3fa82e932c7b"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/retrieval/retrieval-orchestrator.ts",
+      "bytes": 7193,
+      "sha256": "7bfe888748abde7d51e0ff0deff01d39bef110a85b93bf776421090f0b880d1e"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/retrieval/retrieval-reranker.ts",
+      "bytes": 13256,
+      "sha256": "467435a7dec372d6fa59b3ce32aabc92875be22dff146d7ac8b219c39302df8c"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/retrieval/rrf-fusion.ts",
+      "bytes": 8674,
+      "sha256": "4a8aaf2aa0983829275577b7d217ff7980fcf1c2d3f619edf4b14194a6dffadb"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/retrieval/vector-cache-loader.ts",
+      "bytes": 2430,
+      "sha256": "b2f7b4d4ef9c15d0f20797fbdbe5320f69f5ab48e7a685daa9d0820609ad6103"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/routing/entity-collision-map.ts",
+      "bytes": 13115,
+      "sha256": "ef918afb8f8a1b971cf94f9f1079dc2d66838cd5d2b727948bb4e8359b5fa346"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/routing/query-frame-builder.ts",
+      "bytes": 47585,
+      "sha256": "5bed80366463c25e3e9ee98e14558a5e6f55c96c02c1ddae51291a3f45f66457"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/routing/query-router.ts",
+      "bytes": 22133,
+      "sha256": "9a3a805c2ca7e31c03b850c965bdb6aeea3bf9c713f94ac9221a7ab12f4f2cf7"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/routing/scope-guard.ts",
+      "bytes": 28398,
+      "sha256": "b1325bd770134677ef711f1ac1e144fda099d97239b656ee4885b84bf4f8f1ab"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/runtime/no-cloud-guard.ts",
+      "bytes": 2908,
+      "sha256": "c6de2503943a22e8342b2db9061315b6f30d2881fd513bf4298dd92ef126ee18"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/shared/config.ts",
+      "bytes": 2044,
+      "sha256": "81cc87930a9b75f542d87851b52d5e7f1042277a2e6aee601a6ee72c2cc2ae94"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/shared/types.ts",
+      "bytes": 22002,
+      "sha256": "2f67d510d6b3ec16f668dd3d4669e6544eab37d880ac05a426f05decfea9ef69"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/shared/vector-store.ts",
+      "bytes": 4636,
+      "sha256": "8ee4ed31b104e779c84377436760c74e771dfd3e27f0518cf0a5168b578241c8"
+    },
+    {
+      "path": "vietnam-history-chatbot/src/utils/answer-cleaner.ts",
+      "bytes": 33921,
+      "sha256": "c0fd554a8e546ce7fef1f88ea118ee89ff76134dfeb3b36ff68ad83b36b5815b"
+    },
+    {
+      "path": "vietnam-history-chatbot/start_web_demo.bat",
+      "bytes": 169,
+      "sha256": "a55883ddd4cef8550cb95e530667edf2be0f7048a14c3e1dfce046032fa63652"
+    },
+    {
+      "path": "vietnam-history-chatbot/start_web_demo.sh",
+      "bytes": 187,
+      "sha256": "aeee05f303db1f052308182f600f950deb1a409dba859ad040281dfa14874300"
+    },
+    {
+      "path": "vietnam-history-chatbot/tsconfig.json",
+      "bytes": 493,
+      "sha256": "f22b526ac1b2a79e33586df9b756635b0ad2956c4d07c7598bd5e0b2ed1da6fe"
+    }
+  ]
+}

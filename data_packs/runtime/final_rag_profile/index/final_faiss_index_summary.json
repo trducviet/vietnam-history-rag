@@ -1,0 +1,15 @@
+{
+  "faiss_index_path": "data_packs\\runtime\\final_rag_profile\\index\\local_faiss.index",
+  "embedding_path": "data_packs\\runtime\\final_rag_profile\\cache\\local_embeddings.float32.npy",
+  "metadata_path": "data_packs\\runtime\\final_rag_profile\\cache\\local_embedding_metadata.jsonl",
+  "model": "intfloat/multilingual-e5-base",
+  "provider": "local_sentence_transformer",
+  "cloud_embedding_calls": 0,
+  "vector_count": 1049,
+  "dimension": 768,
+  "index_type": "IndexFlatIP",
+  "normalize": true,
+  "elapsed_ms": 580330.1,
+  "status": "PASS"
+}
+

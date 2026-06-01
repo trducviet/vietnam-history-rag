@@ -1,0 +1,9 @@
+﻿category,count,mean_answer_quality,median,rate_ge_8,rate_lt_5,critical_fail,http_error
+fact_date,60,8.277,10.0,0.7167,0.2333,14,2
+explanation,60,8.707,10.0,0.8,0.1833,11,1
+timeline,65,9.948,10.0,1.0,0.0,0,0
+comparison,65,9.488,10.0,0.9077,0.0308,2,1
+misconception_correction,55,7.455,8.35,0.5818,0.2,11,1
+natural_paraphrase,75,8.867,10.0,0.8267,0.1333,10,4
+memory_multiturn,80,7.848,9.195,0.5875,0.2125,17,2
+guard_oos_invalid,40,9.938,9.9,1.0,0.0,0,0

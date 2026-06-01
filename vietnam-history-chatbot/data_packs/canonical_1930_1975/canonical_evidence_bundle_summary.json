@@ -1,0 +1,10 @@
+{
+  "registry": "D:\\Temp\\reportv1\\dow\\pp\\data\\dow\\eval_v2_llm\\vietnam_history_chatbot\\vietnam-history-chatbot\\data_packs\\canonical_1930_1975\\canonical_facts_1930_1975.jsonl",
+  "corpus": "D:\\Temp\\reportv1\\dow\\pp\\data\\dow\\eval_v2_llm\\vietnam_history_chatbot\\data_packs\\human_gold\\final_rag_profile\\corpus\\final_corpus.jsonl",
+  "output": "D:\\Temp\\reportv1\\dow\\pp\\data\\dow\\eval_v2_llm\\vietnam_history_chatbot\\vietnam-history-chatbot\\data_packs\\canonical_1930_1975\\canonical_evidence_bundles_1930_1975.jsonl",
+  "facts": 81,
+  "complete": 79,
+  "partial": 2,
+  "weak": 0,
+  "weak_fact_ids": []
+}

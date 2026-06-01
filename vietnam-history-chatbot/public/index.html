@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sử Việt - tra cứu lịch sử Việt Nam giai đoạn 1930-1975 với nguồn tư liệu đi kèm.">
+  <title>Sử Việt | Tra cứu lịch sử Việt Nam có nguồn</title>
+  <link rel="preload" href="assets/fonts/be-vietnam-pro-400-vietnamese.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/literata-600-700-vietnamese.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/images/archive-reading-room.png" as="image">
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app" class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"><span>SV</span></div>
+        <div>
+          <h1>Sử Việt</h1>
+          <p>Kho tư liệu lịch sử Việt Nam</p>
+        </div>
+      </div>
+
+      <div class="topbar-actions">
+        <div class="mode-selector">
+          <span class="mode-label">Chế độ</span>
+          <div class="runtime-toggle" role="group" aria-label="Chọn cách trả lời">
+            <button id="modeLocal" class="mode-button active" type="button" aria-pressed="true" title="Trả lời dựa trên nguồn, xử lý cục bộ">
+              Tra cứu
+            </button>
+            <button id="modeApiFast" class="mode-button" type="button" aria-pressed="false" title="Dùng AI trực tuyến để diễn giải từ nguồn đã tìm thấy">
+              Diễn giải AI
+            </button>
+          </div>
+        </div>
+        <button id="btnAbout" class="secondary-action" type="button">Thông tin</button>
+      </div>
+    </header>
+
+    <div class="workspace">
+      <aside class="sidebar" id="sidebar">
+        <button class="primary-action" id="btnNewChat" type="button">Câu hỏi mới</button>
+
+        <section class="panel-block">
+          <h2>Giai đoạn</h2>
+          <button class="topic-button" data-fill="Những sự kiện nổi bật giai đoạn 1930-1945 là gì?">
+            <strong>1930 - 1945</strong>
+            <small>Thành lập Đảng, giành chính quyền</small>
+          </button>
+          <button class="topic-button" data-fill="Những sự kiện nổi bật giai đoạn 1945-1954 là gì?">
+            <strong>1945 - 1954</strong>
+            <small>Kháng chiến chống Pháp</small>
+          </button>
+          <button class="topic-button" data-fill="Những sự kiện nổi bật giai đoạn 1954-1975 là gì?">
+            <strong>1954 - 1975</strong>
+            <small>Thống nhất đất nước</small>
+          </button>
+        </section>
+
+        <section class="panel-block">
+          <h2>Chủ đề gợi ý</h2>
+          <div class="demo-list" id="demoList"></div>
+        </section>
+      </aside>
+
+      <main class="chat-area">
+        <section class="timeline-strip" aria-label="Khám phá theo mốc thời gian">
+          <div class="timeline-title">
+            <span>Dòng thời gian</span>
+            <small>Chọn một mốc để bắt đầu</small>
+          </div>
+          <button class="timeline-item" data-fill="Đảng Cộng sản Việt Nam ra đời năm 1930 có ý nghĩa gì?"><span>1930</span><small>Thành lập Đảng</small></button>
+          <button class="timeline-item" data-fill="Tóm tắt các mốc chính của Cách mạng Tháng Tám 1945."><span>1945</span><small>Cách mạng Tháng Tám</small></button>
+          <button class="timeline-item" data-fill="Chiến thắng Điện Biên Phủ 1954 có ý nghĩa gì?"><span>1954</span><small>Điện Biên Phủ</small></button>
+          <button class="timeline-item" data-fill="Tết Mậu Thân 1968 có ý nghĩa gì?"><span>1968</span><small>Tết Mậu Thân</small></button>
+          <button class="timeline-item" data-fill="Hiệp định Paris 1973 có nội dung gì?"><span>1973</span><small>Hiệp định Paris</small></button>
+          <button class="timeline-item" data-fill="Ngày 30/4/1975 xảy ra sự kiện gì?"><span>1975</span><small>Ngày 30/4</small></button>
+        </section>
+
+        <section class="chat-header">
+          <div>
+            <h2>Tra cứu lịch sử</h2>
+            <p id="runtimeModeDescription" aria-live="polite">Tìm trong bộ tư liệu và trả lời kèm nguồn trích dẫn.</p>
+          </div>
+          <div class="chat-header-buttons">
+            <button id="btnSourcesMobile" class="secondary-action" type="button">Xem nguồn</button>
+            <button id="btnDebug" class="secondary-action quiet" type="button">Chi tiết</button>
+          </div>
+        </section>
+
+        <section class="messages" id="messages" aria-live="polite">
+          <div class="empty-state" id="emptyState">
+            <section class="welcome-hero" aria-label="Sử Việt">
+              <div class="welcome-copy">
+                <div class="empty-kicker">Lịch sử Việt Nam | 1930 - 1975</div>
+                <h2>Khám phá lịch sử qua tư liệu</h2>
+                <p>Sự kiện, nhân vật, hiệp định và những chuyển biến định hình một thời kỳ.</p>
+              </div>
+            </section>
+            <section class="discovery-prompts" aria-label="Câu hỏi khởi đầu">
+              <div class="discovery-heading">
+                <h3>Bắt đầu từ một câu hỏi</h3>
+                <p>Chọn chủ đề hoặc tự nhập điều bạn muốn tìm hiểu.</p>
+              </div>
+              <div class="suggestion-grid" id="suggestionGrid"></div>
+            </section>
+          </div>
+        </section>
+
+        <section class="composer" aria-label="Khung nhập câu hỏi">
+          <div class="followup-bar" id="followupBar" hidden>
+            <span>Có thể hỏi tiếp:</span>
+            <button id="btnFollowup" type="button"></button>
+          </div>
+          <div class="composer-box">
+            <textarea id="chatInput" rows="1" placeholder="Ví dụ: Cách mạng Tháng Tám 1945 có ý nghĩa gì?" aria-label="Nhập câu hỏi lịch sử"></textarea>
+            <button id="btnSend" class="send-button" type="button" aria-label="Gửi câu hỏi">
+              <span>Gửi</span>
+            </button>
+          </div>
+          <p class="composer-hint" id="composerHint">Tra cứu cục bộ, kèm nguồn tư liệu.</p>
+        </section>
+      </main>
+
+      <button class="source-backdrop" id="sourceBackdrop" type="button" aria-label="Đóng bảng nguồn"></button>
+      <aside class="source-panel" id="sourcePanel">
+        <div class="source-panel-header">
+          <div>
+            <h2>Tư liệu tham khảo</h2>
+            <p id="sourcePanelHint">Các đoạn trích liên quan đến câu trả lời.</p>
+          </div>
+          <button id="btnCloseSources" class="icon-button close-button" type="button" aria-label="Đóng bảng nguồn">×</button>
+        </div>
+
+        <section class="source-section">
+          <h3>Nguồn được trích dẫn</h3>
+          <div id="sourceCards" class="source-cards">
+            <div class="empty-panel">Nguồn trích dẫn sẽ hiển thị tại đây.</div>
+          </div>
+        </section>
+
+        <details class="technical-disclosure" id="technicalDetails">
+          <summary>Thông tin xử lý và trạng thái hệ thống</summary>
+          <div class="service-status">
+            <span>Dịch vụ</span><strong id="healthBackend">Đang kiểm tra</strong>
+            <span>Mô hình cục bộ</span><strong id="healthOllama">Đang kiểm tra</strong>
+            <span>Tra cứu nguồn</span><strong id="healthRetrieval">Đang kiểm tra</strong>
+            <span>Chế độ</span><strong id="healthRuntimeMode">Xử lý cục bộ</strong>
+          </div>
+          <div id="debugPanel" class="debug-panel">
+            <div class="debug-row"><span>Chế độ</span><strong>Xử lý cục bộ</strong></div>
+            <div class="debug-row"><span>Nguồn</span><strong>Chưa có câu hỏi</strong></div>
+          </div>
+        </details>
+
+        <section class="privacy-note" id="evaluationPanel">
+          <h3>Phạm vi tư liệu</h3>
+          <p>Nội dung tập trung vào lịch sử Việt Nam giai đoạn 1930 - 1975. Khi thiếu tư liệu phù hợp, câu trả lời sẽ nêu rõ giới hạn nguồn.</p>
+        </section>
+      </aside>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+

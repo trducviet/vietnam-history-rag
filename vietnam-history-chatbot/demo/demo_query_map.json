@@ -1,0 +1,20 @@
+{
+  "patch": "LOCAL_DEMO",
+  "description": "Maps demo question IDs to query embedding cache IDs for deterministic hybrid retrieval",
+  "mapping": {
+    "demo_hoa_ky": { "query_cache_key": "cap9i_092", "mode": "hybrid_cached", "expected_targets": ["EVT_0417"] },
+    "demo_asean": { "query_cache_key": "para_asean", "mode": "hybrid_cached", "expected_targets": ["EVT_0416"] },
+    "demo_17": { "query_cache_key": "para_17", "mode": "hybrid_cached", "expected_targets": ["EVT_0211"] },
+    "demo_dongdu": { "query_cache_key": "para_dongdu", "mode": "hybrid_cached", "expected_targets": ["EVT_0077"] },
+    "demo_saigon": { "query_cache_key": "para_saigon", "mode": "hybrid_cached", "expected_targets": ["EVT_0354", "EVT_0357"] },
+    "demo_paris": { "query_cache_key": "para_paris", "mode": "hybrid_cached", "expected_targets": ["EVT_0337"] },
+    "demo_phap": { "query_cache_key": "para_phap", "mode": "hybrid_cached", "expected_targets": ["EVT_0001"] },
+    "demo_vietminh": { "query_cache_key": "para_vietminh", "mode": "hybrid_cached", "expected_targets": ["EVT_0120"] },
+    "demo_cmtt": { "query_cache_key": "para_cmtt", "mode": "hybrid_cached", "expected_targets": ["EVT_0127", "EVT_0123"] },
+    "demo_dbp": { "query_cache_key": "para_dbp", "mode": "gate_only", "expected_targets": ["EVT_0209", "EVT_0195"], "not_primary_demo": true },
+    "demo_uncached": { "query_cache_key": null, "mode": "bm25_fallback", "fallback_allowed": true },
+    "demo_clarification": { "query_cache_key": null, "mode": "policy_guard", "expected_policy": "CLARIFY" },
+    "demo_oos": { "query_cache_key": null, "mode": "policy_guard", "expected_policy": "REFUSE_OOS" },
+    "demo_comparison": { "query_cache_key": null, "mode": "bm25_fallback", "fallback_allowed": true }
+  }
+}

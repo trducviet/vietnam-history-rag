@@ -1,0 +1,145 @@
+{
+  "patch": "LOCAL_DEMO",
+  "version": "1.0",
+  "description": "Official local demo question set for Vietnamese Historical RAG Chatbot",
+  "categories": {
+    "primary_demo": "Stable cached hybrid questions for presentation",
+    "gate_only": "Verification-only, not for primary presentation",
+    "fallback": "Uncached BM25 fallback test",
+    "policy_guard": "OOS and clarification guard test",
+    "comparison": "Comparison caution test"
+  },
+  "questions": [
+    {
+      "id": "demo_hoa_ky",
+      "question": "Sự kiện nào đánh dấu Việt Nam nối lại quan hệ chính thức với Hoa Kỳ?",
+      "category": "primary_demo",
+      "expected_targets": ["EVT_0417"],
+      "expected_mode": "hybrid_rrf_hardened",
+      "expected_answer_contains": ["Hoa Kỳ", "quan hệ", "1995"],
+      "notes": "Vector win case. cap9i_092."
+    },
+    {
+      "id": "demo_asean",
+      "question": "Việt Nam bước vào hội nhập khu vực Đông Nam Á khi nào?",
+      "category": "primary_demo",
+      "expected_targets": ["EVT_0416"],
+      "expected_mode": "hybrid_rrf_hardened",
+      "expected_answer_contains": ["ASEAN", "1995"],
+      "notes": "Must use exact cached query text. Previously mismatched."
+    },
+    {
+      "id": "demo_17",
+      "question": "Văn kiện nào tạm thời chia Việt Nam ở vĩ tuyến 17?",
+      "category": "primary_demo",
+      "expected_targets": ["EVT_0211"],
+      "acceptable_targets": ["EVT_0211", "EVT_0212"],
+      "expected_mode": "hybrid_rrf_hardened",
+      "expected_answer_contains": ["Genève", "1954", "vĩ tuyến 17"],
+      "notes": ""
+    },
+    {
+      "id": "demo_dongdu",
+      "question": "Phong trào đưa thanh niên sang Nhật học đầu thế kỷ XX là gì?",
+      "category": "primary_demo",
+      "expected_targets": ["EVT_0077"],
+      "expected_mode": "hybrid_rrf_hardened",
+      "expected_answer_contains": ["Đông Du"],
+      "notes": ""
+    },
+    {
+      "id": "demo_saigon",
+      "question": "Sự kiện nào kết thúc chính quyền Sài Gòn năm 1975?",
+      "category": "primary_demo",
+      "expected_targets": ["EVT_0354", "EVT_0357"],
+      "expected_mode": "hybrid_rrf_hardened",
+      "expected_answer_contains": ["1975", "Sài Gòn"],
+      "notes": ""
+    },
+    {
+      "id": "demo_paris",
+      "question": "Hiệp định nào gắn với việc Mỹ rút quân khỏi Việt Nam?",
+      "category": "primary_demo",
+      "expected_targets": ["EVT_0337"],
+      "acceptable_targets": ["EVT_0337", "EVT_0339", "SYN_TREATY_011"],
+      "expected_mode": "hybrid_rrf_hardened",
+      "expected_answer_contains": ["Paris", "1973"],
+      "notes": ""
+    },
+    {
+      "id": "demo_phap",
+      "question": "Sự kiện nào mở đầu cuộc xâm lược Việt Nam của Pháp?",
+      "category": "primary_demo",
+      "expected_targets": ["EVT_0001"],
+      "acceptable_targets": ["EVT_0001", "EVT_0004"],
+      "expected_mode": "hybrid_rrf_hardened",
+      "expected_answer_contains": ["Pháp", "1858"],
+      "notes": ""
+    },
+    {
+      "id": "demo_vietminh",
+      "question": "Tổ chức nào do Nguyễn Ái Quốc thành lập ở Pắc Bó năm 1941?",
+      "category": "primary_demo",
+      "expected_targets": ["EVT_0120"],
+      "expected_mode": "hybrid_rrf_hardened",
+      "expected_answer_contains": ["Việt Minh", "1941"],
+      "notes": "EVT_0104 is NOT correct strict answer."
+    },
+    {
+      "id": "demo_cmtt",
+      "question": "Nhân dân Việt Nam giành chính quyền vào mùa thu năm nào?",
+      "category": "primary_demo",
+      "expected_targets": ["EVT_0127", "EVT_0123"],
+      "expected_mode": "hybrid_rrf_hardened",
+      "expected_answer_contains": ["1945", "Cách mạng"],
+      "notes": ""
+    },
+    {
+      "id": "demo_dbp",
+      "question": "Trận đánh lớn nhất kết thúc cuộc kháng chiến chống Pháp?",
+      "category": "gate_only",
+      "expected_targets": ["EVT_0209", "EVT_0195"],
+      "expected_mode": "hybrid_rrf_hardened",
+      "expected_answer_contains": ["Điện Biên Phủ"],
+      "notes": "Gate-only. Hybrid rank 8. Not primary presentation unless answer verified clean."
+    },
+    {
+      "id": "demo_uncached",
+      "question": "Phong trào Cần Vương diễn ra trong bối cảnh nào?",
+      "category": "fallback",
+      "expected_targets": [],
+      "expected_mode": "bm25_only_fallback",
+      "expected_answer_contains": ["Cần Vương"],
+      "notes": "No cached embedding. BM25 fallback."
+    },
+    {
+      "id": "demo_clarification",
+      "question": "Nó diễn ra khi nào?",
+      "category": "policy_guard",
+      "expected_targets": [],
+      "expected_mode": "policy_guard",
+      "expected_policy": "CLARIFY",
+      "expected_answer_contains": [],
+      "notes": "Must ask for clarification. No citations."
+    },
+    {
+      "id": "demo_oos",
+      "question": "Trận Waterloo có ý nghĩa gì?",
+      "category": "policy_guard",
+      "expected_targets": [],
+      "expected_mode": "policy_guard",
+      "expected_policy": "REFUSE_OOS",
+      "expected_answer_contains": [],
+      "notes": "Must refuse. No citations."
+    },
+    {
+      "id": "demo_comparison",
+      "question": "Hãy so sánh Chiến tranh đặc biệt và Chiến tranh cục bộ",
+      "category": "comparison",
+      "expected_targets": [],
+      "expected_mode": "bm25_only_fallback",
+      "expected_answer_contains": [],
+      "notes": "BM25 fallback. Honest partial. No overclaim. Side-specific is future 10D."
+    }
+  ]
+}
